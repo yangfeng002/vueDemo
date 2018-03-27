@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--名称空间-->
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>vue简单示例</title>
+    <!--引入vue文件-->
+    <script src="lib/vue.js" charset="UTF-8" type="text/javascript"></script>
+</head>
+<body>
+   <!--简单的双向绑定  text内容-->
+   <div id="app" class="app">
+       {{ message }}
+   </div>
+
+   <!--绑定属性的-->
+   <div id="app2" v-bind:title="message2" >鼠标悬停几秒钟查看此处动态绑定的提示信息！</div>
+
+   <!--条件指令-->
+   <div id="app3">
+       <p v-if="see">你现在看到我了</p>
+   </div>
+
+   <!--循环指令-->
+   <div id="app4">
+       <ol>
+           <li v-for="item in todos">{{item.text}}</li>
+       </ol>
+   </div>
+
+   <!--v-on监听事件-->
+   <div id="app5">
+       <p>{{message}}</p>
+       <button v-on:click="sendMessage">发送消息</button>
+   </div>
+
+   <!--表单和model双向绑定-->
+   <div id="app6">
+       <p>{{ message }}</p>
+       <input v-model="message"/>
+   </div>
+
+   <!--script脚本，要放在视图html标签下面-->
+   <script>
+       /* v1  简单双向绑定的脚本*/
+       var app = new Vue({
+           el: '.app',//绑定对象(类或者id选择器都可以)
+           data: {
+               message: 'Hello Vue!'
+           }
+       });
+
+       /*v2  利用v-bind指令绑定标签的属性 --脚本*/
+       var app2 = new Vue({
+           el:'#app2',
+           data:{
+               message2:'页面加载于 ' + new Date().toLocaleString()
+           }
+       });
+       //app2.message2 = "新消息"; //重新修改赋值
+
+       /*v3  条件判断*/
+      var app3 = new Vue({
+          el:'#app3',
+          data:{
+              see:true
+          }
+      });
+
+      /*v4 循环*/
+      var app4 = new Vue({
+        el:'#app4',
+        data:{
+            todos: [
+                { text: '学习 JavaScript' },
+                { text: '学习 Vue' },
+                { text: '整个牛项目' }
+            ]
+        }
+    });
+      app4.todos.push({text:'新列表'});
+
+      /*事件绑定*/
+      var app5 = new Vue({
+          el:'#app5',
+          data:{
+             message:"hello vue.js"
+          },
+          methods:{
+              sendMessage:function () {
+                  this.message = this.message.split('').reverse().join('')
+              }
+          }
+      })
+
+       /*表单绑定 v-model*/
+       var app6 = new Vue({
+           el:'#app6',
+           data:{
+               message:'Hello Vue'
+           }
+       });
+
+   </script>
+</body>
+</html>
