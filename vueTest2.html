@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>vue示例</title>
+    <script src="lib/vue.js" charset="UTF-8" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div id="vue-app">
+    <!--方法可以传递参数-->
+    <p>{{greet('morning')}}</p>
+    <!--属性-->
+   <p>name:{{name}}</p>
+    <!--属性-->
+   <p>job:{{job}}</p>
+    <!--超链接-->
+    <a v-bind:href="website">web开发</a>
+    <input type="text" v-bind:value="name">
+    <p v-html="websiteTag"></p>
+</div>
+<script type="text/javascript" charset="UTF-8" src="js/app.js"></script>
+</body>
+</html>
