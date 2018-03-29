@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>vue事件</title>
@@ -8,8 +8,16 @@
 </head>
 <body>
     <div id="vue-event">
-
+      <h1> Events </h1>
+        <button @click="add(1)">增加1岁</button>
+        <button v-on:click="subtract(1)">减少1岁</button>
+      <p>我的年龄是{{age}}</p>
+        <!--v-on 和@ 是一样的-->
+       <div id="canvas" v-on:mousemove="updateXY">
+           {{x}}  {{y}}
+       </div>
 
     </div>
+    <script type="text/javascript" charset="UTF-8" src="js/vueEvents.js"></script>
 </body>
 </html>

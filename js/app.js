@@ -6,7 +6,7 @@
 * 1.el  表示element元素
 * 2.data  表示存储数据的,获取的时候可以直接用app.name，在div容器中需要用{{name}}
 * 3.methods 表示方法的对象
-* 4.v-bind v-html 属性绑定
+* 4.v-bind绑定属性， v-html 属性绑定，插入标签
 *
 *
 * */
