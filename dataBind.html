@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>双向数据绑定</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script type="text/javascript" charset="UTF-8" src="lib/vue.js"></script>
+</head>
+<body>
+    <div id="vue-app">
+        <h3>双向数据绑定 input select textarea</h3>
+        <label>姓名：</label>
+        <input type="text" @keyup.alt.enter="loginName"  placeholder="请输入姓名"/>
+        <p>{{}}</p>
+        <label>年龄：</label>
+        <input type="text" v-on:keyup.enter="loginAge" placeholder="请输入年龄"/>
+    </div>
+</body>
+</html>

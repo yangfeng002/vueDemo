@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件---修饰符</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script type="text/javascript" charset="UTF-8" src="lib/vue.js"></script>
+</head>
+<body>
+   <div id="vue-app">
+      <h3>键盘Events</h3>
+       <label>姓名：</label>
+       <!--修饰符可以拼接-->
+       <input type="text" @keyup.alt.enter="loginName"  placeholder="请输入姓名"/>
+       <label>年龄：</label>
+       <!--键盘修饰符-->
+       <input type="text" v-on:keyup.enter="loginAge" placeholder="请输入年龄"/>
+       <!--<input type="text" v-on:keyup.up="loginAge" placeholder="请输入年龄"/>-->
+       <!--<input type="text" v-on:keyup.esc="loginAge" placeholder="请输入年龄"/>-->
+
+   </div>
+
+   <script type="text/javascript" charset="UTF-8" src="js/vueEvents2.js"></script>
+</body>
+</html>
