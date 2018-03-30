@@ -13,7 +13,8 @@ new Vue({
   data:{
    age:20,
       x:0,
-      y:0
+      y:0,
+      website:"http://www.baidu.com"
   },
   methods:{
     add:function (value) {
@@ -25,6 +26,9 @@ new Vue({
     updateXY:function (event) {
        this.x = event.offsetX;
        this.y = event.offsetY;
+    },
+    stopMoving:function (event) {
+        event.stopPropagation();
     }
   }
 

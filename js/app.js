@@ -10,13 +10,18 @@
 *
 *
 * */
+var obj = {
+    foo: 'bar'
+};
+Object.freeze(obj);//冻结对象，后面不允许修改
 var app = new Vue({
     el:"#vue-app",
     data:{
       name:"Ms yang",
       job:"web开发",
       website:"http://www.baidu.com",
-      websiteTag:"<a href='http://wwww.baidu.com'>百度一下</a>"
+      websiteTag:"<a href='http://wwww.baidu.com'>百度一下</a>",
+      test:obj
     },
     methods:{
         greet:function (time) {
@@ -24,3 +29,5 @@ var app = new Vue({
         }
     }
 });
+app.test.foo ="修改值";
+
