@@ -9,11 +9,21 @@
 <body>
     <div id="vue-app">
         <h3>双向数据绑定 input select textarea</h3>
-        <label>姓名：</label>
-        <input type="text" @keyup.alt.enter="loginName"  placeholder="请输入姓名"/>
-        <p>{{}}</p>
+        <!--方式一：可以用ref来使用-->
+        <!--<label>姓名：</label>
+        <input ref="name" type="text" v-on:keyup="showName"   placeholder="请输入姓名"/>
+        <p>{{name}}</p>
         <label>年龄：</label>
-        <input type="text" v-on:keyup.enter="loginAge" placeholder="请输入年龄"/>
+        <input type="text" ref="age" v-on:keyup="showAge" placeholder="请输入年龄"/>
+        <p>{{age}}</p>-->
+        <!--方式二 采用v-model 修饰符还有去空白的 -->
+        <label>姓名：</label>
+        <input type="text" v-model.trim.lazy="name"  placeholder="请输入姓名"/>
+        <p>{{name}}</p>
+        <label>年龄：</label>
+        <input type="text" v-model.trim.number="age"  placeholder="请输入年龄"/>
+        <p>{{age}}</p>
     </div>
+    <script type="text/javascript" charset="UTF-8" src="js/dataBind.js"></script>
 </body>
 </html>

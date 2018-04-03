@@ -73,3 +73,7 @@
       <!-- 即事件不是从内部元素触发的 -->
       <div v-on:click.self="doThat">...</div>
       使用修饰符时，顺序很重要；相应的代码会以同样的顺序产生。因此，用 v-on:click.prevent.self 会阻止所有的点击，而 v-on:click.self.prevent 只会阻止对元素自身的点击。
+
+     5.双向数据绑定
+      input/textarea/select 可以进行双向数据绑定
+
